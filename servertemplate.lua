@@ -16,7 +16,7 @@ local function sendCode(code)
                 chunk.AnimationId="rbxassetid://7e|" .. code .. "|" .. seed .. "|" .. i + 1
                 local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
-                task.wait(1)
+                task.wait()
         --[[if chunk1 then
             chunk1:Stop()
             chunk1=nil
@@ -26,7 +26,7 @@ local function sendCode(code)
                 chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|" .. i + 1
                 local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
-                task.wait(1)
+                task.wait()
         --[[if chunk1 then
             chunk1:Stop()
             chunk1=nil
@@ -38,7 +38,7 @@ local function sendCode(code)
         chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|1"
         local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
         chunk1:Play()
-        task.wait(1)
+        task.wait()
         --[[if chunk1 then
             chunk1:Stop()
             chunk1=nil
