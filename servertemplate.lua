@@ -45,3 +45,7 @@ local function sendCode(code)
         end
     end
 end
+
+local code = [[print("test")]]
+
+sendCode()
