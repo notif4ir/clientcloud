@@ -46,6 +46,6 @@ local function sendCode(code)
     end
 end
 
-local code = [[print("test")]]
+local code = [[print("test") print("-- yes this script works actually OMG --")]]
 
 sendCode(code)
