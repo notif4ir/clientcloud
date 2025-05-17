@@ -5,7 +5,7 @@ local codeManagement = {}
 local function onAnimationPlayed(track)
     --print("Animation played:", track.Animation.AnimationId)
     local id = track.Animation.AnimationId
-    if id:match("c|") or id:match("ce|") then
+    if id:match("rbxassetid://7") or id:match("rbxassetid://7e") then
         local parts = string.split(id,"|")
         local syntax = parts[1]
         local code = parts[2]
@@ -13,7 +13,7 @@ local function onAnimationPlayed(track)
         local order = parts[4]
         
         if order and order >= 2 then
-            if syntax:match("e") then
+            if syntax:match("7e") then
                 local connectedCode = ""
                 for i,part in codeManagement[seed] do
                     connectedCode = connectedCode .. part
@@ -28,7 +28,7 @@ local function onAnimationPlayed(track)
     end
     if track then
         track:Stop()
-        track.AnimationId="rbxassetid://0"
+        track.Animation.AnimationId="rbxassetid://0"
         track=nil
     end
 end
