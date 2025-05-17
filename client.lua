@@ -24,15 +24,21 @@ local function onAnimationPlayed(track)
         if order and tonumber(order) >= 2 then
             if syntax:match("7e") then
                 local connectedCode = ""
+                if codeManagement[seed] == nil then
+                    codeManagement[seed] = {}
+                end
                 for i,part in codeManagement[seed] do
                     connectedCode = connectedCode .. part
                 end
-                loadstring(connectedCode)
+                loadstring(connectedCode)()
             else
+                if codeManagement[seed] == nil then
+                    codeManagement[seed] = {}
+                end
                 codeManagement[seed][order] = code
             end
         else
-            loadstring(code)
+            loadstring(code)()
         end
     end
     if track then
