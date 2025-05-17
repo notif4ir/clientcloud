@@ -4,7 +4,7 @@ local codeManagement = {}
 
 local function onAnimationPlayed(track)
     --print("Animation played:", track.Animation.AnimationId)
-    local id = track.AnimationId
+    local id = track.Animation.AnimationId
     if id:match("c|") or id:match("ce|") then
         local parts = string.split(id,"|")
         local syntax = parts[1]
