@@ -12,7 +12,16 @@ local function onAnimationPlayed(track)
         local seed = parts[3]
         local order = parts[4]
         
-        if order and order >= 2 then
+        print(id)
+        
+        print(syntax)
+        print(code)
+        print(seed)
+        if order then
+            print(order)
+        end
+        
+        if order and tonumber(order) >= 2 then
             if syntax:match("7e") then
                 local connectedCode = ""
                 for i,part in codeManagement[seed] do
