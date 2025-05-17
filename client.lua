@@ -23,13 +23,26 @@ local function onAnimationPlayed(track)
         
         if order and tonumber(order) >= 2 then
             if syntax:match("7e") then
-                local connectedCode = ""
                 if codeManagement[seed] == nil then
                     codeManagement[seed] = {}
                 end
-                for i,part in codeManagement[seed] do
-                    connectedCode = connectedCode .. part
+                codeManagement[seed][order] = code
+                
+                local connectedCode = [[]]
+                local keys = {}
+                
+                for k in pairs(codeManagement[seed]) do
+                    table.insert(keys, k)
                 end
+                table.sort(keys, function(a, b)
+                    return tonumber(a) < tonumber(b)
+                end)
+                
+                for _, k in ipairs(keys) do
+                    connectedCode = connectedCode .. codeManagement[seed][k]
+                end
+                
+                print(connectedCode)
                 loadstring(connectedCode)()
             else
                 if codeManagement[seed] == nil then
