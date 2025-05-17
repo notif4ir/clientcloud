@@ -14,35 +14,35 @@ local function sendCode(code)
             if i == #chunks then
                 local chunk = Instance.new("Animation")
                 chunk.AnimationId="rbxassetid://7e|" .. code .. "|" .. seed .. "|" .. i + 1
-                local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
+                local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
                 task.wait(1)
-                if chunk1 then
-                    chunk1:Stop()
-                    chunk1=nil
-                end
+        --[[if chunk1 then
+            chunk1:Stop()
+            chunk1=nil
+        end]]
             else
                 local chunk = Instance.new("Animation")
                 chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|" .. i + 1
-                local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
+                local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
                 task.wait(1)
-                if chunk1 then
-                    chunk1:Stop()
-                    chunk1=nil
-                end
+        --[[if chunk1 then
+            chunk1:Stop()
+            chunk1=nil
+        end]]
             end
         end
     else
         local chunk = Instance.new("Animation")
         chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|1"
-        local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
+        local chunk1 = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
         chunk1:Play()
         task.wait(1)
-        if chunk1 then
+        --[[if chunk1 then
             chunk1:Stop()
             chunk1=nil
-        end
+        end]]
     end
 end
 
