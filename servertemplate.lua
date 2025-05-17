@@ -7,14 +7,14 @@ function splitStringToTable(s, chunkSize)
 end
 
 local function sendCode(code)
-    local seed = math.random(-10000,100000)
-    if string.len(code) >= 18 then
-        local chunks = splitStringToTable(code,18)
+    local seed = math.random(-100,1000)
+    if string.len(code) >= 15 then
+        local chunks = splitStringToTable(code,15)
         for i,code in chunks do
             if i == #chunks then
                 local chunk = Instance.new("Animation")
-                stack.AnimationId="ce|" .. code .. "|" .. seed .. "|" .. i + 1
-                local chunkl = game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):LoadAnimation(chunk)
+                chunk.AnimationId="rbxassetid://7e|" .. code .. "|" .. seed .. "|" .. i + 1
+                local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
                 task.wait(1)
                 if chunk1 then
@@ -23,8 +23,8 @@ local function sendCode(code)
                 end
             else
                 local chunk = Instance.new("Animation")
-                stack.AnimationId="c|" .. code .. "|" .. seed .. "|" .. i + 1
-                local chunkl = game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):LoadAnimation(chunk)
+                chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|" .. i + 1
+                local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
                 chunk1:Play()
                 task.wait(1)
                 if chunk1 then
@@ -35,8 +35,8 @@ local function sendCode(code)
         end
     else
         local chunk = Instance.new("Animation")
-        stack.AnimationId="c|" .. code .. "|" .. seed .. "|1"
-        local chunkl = game.Players.LocalPlayer.Character.Humanoid:WaitForChild("Animator"):LoadAnimation(chunk)
+        chunk.AnimationId="rbxassetid://7|" .. code .. "|" .. seed .. "|1"
+        local chunkl = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(chunk)
         chunk1:Play()
         task.wait(1)
         if chunk1 then
@@ -48,4 +48,4 @@ end
 
 local code = [[print("test")]]
 
-sendCode()
+sendCode(code)
